@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "fastclick": "^1.0.6",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "vuex": "^2.5.0",

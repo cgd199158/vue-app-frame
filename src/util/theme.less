@@ -1,0 +1,117 @@
+@red: #fe4842;
+@red-bg: rgba(254, 72, 66, 0.3);
+@primary: #1070ff;
+@green: #05ce7b;
+@bg: #f2f6f9;
+@white: #fefefe;
+@border-base: #d7d6dc;
+@font-primary: #1a1a1a; //主要文字
+@font-regular: #616161; //常规文字
+@font-secondary: #999999; //次要文字
+@font-placeholder: #c2c2c2; //占位文字
+
+.box-shadow() {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.header-bg() {
+  background: linear-gradient(90deg, #1cabe9, #395aed);
+}
+
+// 边框四角线
+.out-frame(@scolor: #ff0000, @ecolor: #ff0000, @width: 2px, @length: 20px) {
+  background: linear-gradient(to left, @scolor, @ecolor) left top no-repeat, linear-gradient(to bottom, @scolor, @ecolor) left top no-repeat, linear-gradient(to left, @scolor, @ecolor) right top no-repeat, linear-gradient(to bottom, @scolor, @ecolor) right top no-repeat, linear-gradient(to left, @scolor, @ecolor) left bottom no-repeat, linear-gradient(to bottom, @scolor, @ecolor) left bottom no-repeat, linear-gradient(to left, @scolor, @ecolor) right bottom no-repeat, linear-gradient(to left, @scolor, @ecolor) right bottom no-repeat;
+  background-size: @width @length, @length @width, @width @length, @length @width;
+}
+
+.be-full() {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+// 一像素上边框
+.top-border-1px(@color) {
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: 200;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1px;
+    background-color: @color;
+  }
+}
+
+// 一像素上边框
+.top-border-1px() {
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: 200;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #e4e4e4;
+  }
+}
+
+//清除浮动
+.clearFix() {
+  *zoom: 1;
+
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+/* 垂直居中 */
+
+.mix-flex-y-center () {
+  display: flex;
+  align-items: center;
+}
+
+/* 水平居中 */
+
+.mix-flex-x-center () {
+  display: flex;
+  justify-content: center;
+}
+
+/* 水平垂直居中 */
+
+.mix-flex-center () {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 超出部分出省略号 */
+
+.mix-text-overflow () {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* 多行文本超出部分省略号 */
+
+.ellipsis-line(@line: 2) {
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: @line;
+  box-orient: vertical;
+}

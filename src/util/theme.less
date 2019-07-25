@@ -1,14 +1,43 @@
-@red: #fe4842;
-@red-bg: rgba(254, 72, 66, 0.3);
-@primary: #1070ff;
-@green: #05ce7b;
-@bg: #f2f6f9;
+//日常样式通用文件
+// // 1\. 按iPhone 6的视觉稿，基准字号为16px，因此可以设置一个LESS变量。
+// @px: 16rem;// 2\. 通过LESS内置的除法自动运算。比如用到16px的字号时，写成16/@px即可，
+// 最后会计算成1rem。.example {    font-size: 16/@px;    margin: 20/@px 0;    padding: 20/@px 10/@px;}
+
+
+@blue: #0c4384;
+@primary: #1890ff;
+@success: #52c41a;
+@warn: #faad14;
+@danger: #f5222d;
 @white: #fefefe;
-@border-base: #d7d6dc;
-@font-primary: #1a1a1a; //主要文字
-@font-regular: #616161; //常规文字
-@font-secondary: #999999; //次要文字
-@font-placeholder: #c2c2c2; //占位文字
+@border-base: #ccc;
+@font-title: rgba(0, 0, 0, 0.85);
+@font-regular: rgba(0, 0, 0, 0.65);
+@font-primary: rgba(0, 0, 0, 0.65);
+@font-secondary: rgba(0, 0, 0, 0.45);
+@font-disable: rgba(0, 0, 0, 0.25);
+@border-base: rgba(0, 0, 0, 0.15);
+@font-dividers: rgba(0, 0, 0, 0.09);
+@font-background: rgba(0, 0, 0, 0.04);
+@font-tableheader: rgba(0, 0, 0, 0.02);
+
+// 样式实现图片正方形
+.square_box {
+  width: 100%;
+  position: relative;
+
+  .square {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    padding-top: 100%;
+  }
+}
 
 .box-shadow() {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);

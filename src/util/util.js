@@ -225,3 +225,30 @@ export const decodeUnicode = function (str) {
     str = str.replace(/\\/g, "");
     return str;
 }
+
+// 根据索引删除数组的内容
+export const removeItemByIndex = function (array, index) {
+    if (index <= (array.length - 1)) {
+        for (var i = index; i < array.length; i++) {
+            array[i] = array[i + 1];
+        }
+    } else {
+        throw new Error('超出最大索引！');
+    }
+    array.length = array.length - 1;
+    console.log('array', array);
+    return array;
+}
+
+// 覆盖console, debug环境不使用
+export const debug = function (bool) {
+    if (!bool) {
+        consoleHolder = console;
+        console = {};
+        Object.keys(consoleHolder).forEach(function (key) {
+            console[key] = function () { };
+        })
+    } else {
+        console = consoleHolder;
+    }
+}

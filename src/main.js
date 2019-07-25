@@ -6,7 +6,7 @@ import App from './App';
 import { ToastPlugin, ConfirmPlugin, LoadingPlugin } from 'vux'; //vux的全局注册组件
 import router from './router/index'; //router组件
 import store from './store'; //vux store
-import './util/reset.css'; //初始化样式
+// import './util/reset.css'; //初始化样式
 
 Vue.use(ToastPlugin, { position: 'middle', type: 'text' });
 Vue.use(LoadingPlugin);

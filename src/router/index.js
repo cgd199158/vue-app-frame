@@ -45,5 +45,6 @@ export default new Router({
         keepAlive: true, //是否缓存页面及goback的时候不再刷新页面
       },
     },
+    { path: '*', component: Home },//全不匹配的情况下，返回404，路由按顺序从上到下，依次匹配。最后一个*能匹配全部，
   ]
 })
